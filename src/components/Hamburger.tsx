@@ -1,4 +1,5 @@
 import HamburgerElement from '~/components/HamburgerElement';
+import type { MouseEvent } from "react";
 
 interface HamburgerProps {
   show: boolean;
@@ -6,7 +7,7 @@ interface HamburgerProps {
 }
 
 const HamburgerMenu = (props: HamburgerProps) => {
-  const handleGrayAreaClick = (event) => {
+  const handleGrayAreaClick = (event: MouseEvent) => {
     if (event.target === event.currentTarget) {
       props.onGreyAreaClick();
     }
