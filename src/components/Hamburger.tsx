@@ -1,38 +1,20 @@
-import Image from "next/image"
+import HamburgerElement from '~/components/HamburgerElement';
 
 interface HamburgerProps {
-    show: boolean
+  show: boolean;
 }
 
 const Hamburger = (props: HamburgerProps) => {
-    return (
-        <div>
-            <div className="flex">
-                <Image width={64} height={64} src={"/"} alt="Categorie"></Image>
-                <span>Categorie</span>
-            </div>
-            <div className="flex">
-                <Image width={64} height={64} src={"/"} alt="Chi siamo"></Image>
-                <span>Chi siamo</span>
-            </div>
-            <div className="flex">
-                <Image width={64} height={64} src={"/"} alt="Temi"></Image>
-                <span>Temi</span>
-            </div>
-            <div className="flex">
-                <Image width={64} height={64} src={"/"} alt="Utente"></Image>
-                <span>Utente</span>
-            </div>
-            <div className="flex">
-                <Image width={64} height={64} src={"/"} alt="Utente"></Image>
-                <span>Utente</span>
-            </div>
-            <div className="flex">
-                <Image width={64} height={64} src={"/"} alt="Impostazioni"></Image>
-                <span>Impostazioni</span>
-            </div>
-        </div>
-    )    
-}
+  return (
+    <div className="bg-[#5AA588] w-fit">
+      <HamburgerElement name="Categories" source="/" onClick={() => {}} />
+      <HamburgerElement name="About us" source="/" onClick={() => {}} />
+      <HamburgerElement name="Themes" source="/" onClick={() => {}} />
+      <HamburgerElement name="User" source="/" onClick={() => {}} />
+      <HamburgerElement name="Payment methods" source="/" onClick={() => {}} />
+      <HamburgerElement name="Settings" source="/" onClick={() => {}} />
+    </div>
+  );
+};
 
 export default Hamburger;
