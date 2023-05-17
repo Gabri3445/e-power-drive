@@ -6,34 +6,35 @@ import { useEffect, useState } from "react";
 interface NavbarProps {
   onHamburgerClick: () => void;
   onAccountClick: () => void;
+  hamburgerShown: boolean;
+  setHamburgerShown: (value: boolean) => void;
 }
 
 const Navbar = (props: NavbarProps) => {
-  const [hamburgerShown, setHamburgerShown] = useState<boolean>(false);
   const [hamburgerImage, setHambugerImage] = useState<string>(burger.src);
 
   const onHamburgerClick = () => {
     props.onHamburgerClick();
-    setHamburgerShown(!hamburgerShown);
+    props.setHamburgerShown(!props.hamburgerShown);
   };
 
   useEffect(() => {
-      if (hamburgerShown) {
+      if (props.hamburgerShown) {
         setHambugerImage(cross.src);
       } else {
         setHambugerImage(burger.src);
       }
     },
-    [hamburgerShown]
+    [props.hamburgerShown]
   );
 
   return (
     <div className="flex bg-[#61B038] items-center h-[73px] justify-between">
       <button onClick={onHamburgerClick} className="ml-3.5">
-        <Image width="40" height="33" alt="Hamburger" src={hamburgerImage}></Image>
+        <Image width="40" height="33" alt="Hamburger" priority={true} src={hamburgerImage}></Image>
       </button>
       <button onClick={props.onAccountClick}>
-        <Image width="58" height="61" alt="Account" src="/logo.svg" className="mr-3.5"></Image>
+        <Image width="58" height="61" alt="Account" src="/logo.svg" priority={true} className="mr-3.5"></Image>
       </button>
     </div>
   );

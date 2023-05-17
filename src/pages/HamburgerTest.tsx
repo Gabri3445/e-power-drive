@@ -5,21 +5,24 @@ import Navbar from "~/components/Navbar";
 import Filters from "~/components/Filters";
 
 const HamburgerTest: NextPage = () => {
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(false);
+
+  const onHamburgerChange = () => {
+    if (!show) {
+      setShow(true)
+      return
+    }
+    setShow(false)
+  }
+
   return (
     <div className="h-screen relative">
-      <Navbar onHamburgerClick={() => {
-        if (!show) {
-          setShow(true)
-          return
-        }
-        setShow(false)
-      }} onAccountClick={() => {console.log("clicked")}}></Navbar>
-
-      <Hamburger show={show}></Hamburger>
+      <Navbar onHamburgerClick={onHamburgerChange} onAccountClick={() => {console.log("clicked")}} hamburgerShown={show} setHamburgerShown={setShow}></Navbar>
+      <Hamburger show={show} onGreyAreaClick={onHamburgerChange}></Hamburger>
       <Filters/>
     </div>
   )
+  //TODO: Make this the index.tsx
 }
 
 export default HamburgerTest;
