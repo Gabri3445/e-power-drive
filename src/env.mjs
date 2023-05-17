@@ -7,7 +7,13 @@ export const env = createEnv({
    * isn't built with invalid env vars.
    */
   server: {
-    DATABASE_URL: z.string().url(),
+    POSTGRES_URL: z.string(),
+    POSTGRES_PRISMA_URL: z.string(),
+    POSTGRES_URL_NON_POOLING: z.string(),
+    POSTGRES_USER: z.string(),
+    POSTGRES_HOST: z.string(),
+    POSTGRES_PASSWORD: z.string(),
+    POSTGRES_DATABASE: z.string(),
     NODE_ENV: z.enum(["development", "test", "production"]),
   },
 
@@ -25,7 +31,13 @@ export const env = createEnv({
    * middlewares) or client-side so we need to destruct manually.
    */
   runtimeEnv: {
-    DATABASE_URL: process.env.DATABASE_URL,
+    POSTGRES_URL: "",
+    POSTGRES_PRISMA_URL:"",
+    POSTGRES_URL_NON_POOLING: "",
+    POSTGRES_USER: "",
+    POSTGRES_HOST:  "",
+    POSTGRES_PASSWORD:  "",
+    POSTGRES_DATABASE: "",
     NODE_ENV: process.env.NODE_ENV,
     // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
   },

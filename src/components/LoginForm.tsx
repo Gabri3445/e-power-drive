@@ -9,7 +9,7 @@ interface LoginFormProps {
 export default function LoginForm() {
     return (
         <div className="w-full h-screen bg-[#E2EEE2]">
-            <div className="logo w-[78%] h-[18%] flex items-center ml-auto mr-auto">
+            <div className="logo w-[78%] h-[18%] pt-[15%] flex items-center ml-auto mr-auto">
                 <Image src="/logo.svg" width={150} height={150} alt="barilla" />
                 <h1 className="text-[#61B038] text-[40px] ml-[14px] font-semibold">Login</h1>
             </div>        
