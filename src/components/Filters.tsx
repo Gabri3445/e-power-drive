@@ -7,6 +7,10 @@ const Filters = () => {
             <div className="Filter w-[46px] h-[46px] rounded-full bg-[#A5EB95]"></div>
         </div>
     )
+  //TODO split in components
+  /*
+    - OnClick(sender) on each filter
+   */
 }
 
 export default Filters
