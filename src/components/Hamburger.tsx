@@ -6,15 +6,16 @@ interface HamburgerProps {
 
 const Hamburger = (props: HamburgerProps) => {
   return (
-    <div className="bg-[#5AA588] w-fit">
-      <HamburgerElement name="Categories" source="/" onClick={() => {}} />
-      <HamburgerElement name="About us" source="/" onClick={() => {}} />
-      <HamburgerElement name="Themes" source="/" onClick={() => {}} />
-      <HamburgerElement name="User" source="/" onClick={() => {}} />
-      <HamburgerElement name="Payment methods" source="/" onClick={() => {}} />
-      <HamburgerElement name="Settings" source="/" onClick={() => {}} />
+    <div className="bg-[#5AA588] w-fit h-full">
+      <HamburgerElement name="Categories" source="/hamburgerIcons/category.svg" onClick={() => {}} />
+      <HamburgerElement name="About us" source="/hamburgerIcons/info.svg" onClick={() => {}} />
+      <HamburgerElement name="Themes" source="/hamburgerIcons/theme.svg" onClick={() => {}} />
+      <HamburgerElement name="User" source="/hamburgerIcons/user.svg" onClick={() => {}} />
+      <HamburgerElement name="Payment methods" source="/hamburgerIcons/wallet.svg" onClick={() => {}} />
+      <HamburgerElement name="Settings" source="/hamburgerIcons/setting.svg" onClick={() => {}} />
     </div>
   );
+  //TODO log out
 };
 
 export default Hamburger;
