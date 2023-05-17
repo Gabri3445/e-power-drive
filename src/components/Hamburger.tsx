@@ -15,6 +15,7 @@ const Hamburger = (props: HamburgerProps) => {
               <HamburgerElement name="User" source="/hamburgerIcons/user.svg" onClick={() => {}} />
               <HamburgerElement name="Payment methods" source="/hamburgerIcons/wallet.svg" onClick={() => {}} />
               <HamburgerElement name="Settings" source="/hamburgerIcons/setting.svg" onClick={() => {}} />
+              <HamburgerElement name="Logout" source="/hamburgerIcons/exit.svg" onClick={() => {}} isLogout={true}/>
             </div>
           </div>          
         )
@@ -24,7 +25,3 @@ const Hamburger = (props: HamburgerProps) => {
 };
 
 export default Hamburger;
-
-/*
-
- */
