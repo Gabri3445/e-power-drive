@@ -19,7 +19,12 @@ const Hamburger = (props: HamburgerProps) => {
           </div>          
         )
       }
+      return <></>;
   //TODO log out
 };
 
 export default Hamburger;
+
+/*
+
+ */
