@@ -1,5 +1,4 @@
 import Image from "next/image"
-import { useState } from "react";
 
 
 interface Filter {
@@ -13,7 +12,7 @@ export default function Filter(props: Filter) {
       e.currentTarget.classList.toggle("bg-[#A5EB95]")
       e.currentTarget.classList.toggle("bg-[#fff]")
     }} className="Filter flex items-center justify-center w-[46px] h-[46px] rounded-full bg-[#fff]">
-      <Image width={40} height={40} src={props.src} alt={"Mamt"} />
+      <Image width={30} height={40} src={props.src} alt={"vehicle_icon"} />
     </div>
   )
 }
