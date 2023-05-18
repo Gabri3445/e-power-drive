@@ -1,24 +1,31 @@
-import { type NextPage } from "next";
-import LoginForm from "~/components/LoginForm";
+import { NextPage } from "next";
+import { useState } from "react";
+import Hamburger from "~/components/Hamburger";
 import Navbar from "~/components/Navbar";
+import Filters from "~/components/Filters/Filters";
+import Map from "~/components/Map";
 
-const Home: NextPage = () => {
+const HamburgerTest: NextPage = () => {
+  const [show, setShow] = useState(false);
 
-  //For Navbar
-  const onHamburgerClick = () => {
-
+  const onHamburgerChange = () => {
+    if (!show) {
+      setShow(true)
+      return
+    }
+    setShow(false)
   }
-
-  const onAccountClick = () => {
-    
-  }
-  //End Navbar
 
   return (
-    <>
-    <LoginForm/>
-    </>
-  );
-};
+    <div className="h-screen relative">
+      <Navbar onHamburgerClick={onHamburgerChange} onAccountClick={() => {console.log("clicked")}} hamburgerShown={show} setHamburgerShown={setShow}></Navbar>
+      <Hamburger show={show} onGreyAreaClick={onHamburgerChange}></Hamburger>
+      <Filters/>
+    </div>
+  )
+  //TODO: Make this the Login.tsx
 
-export default Home;
+
+}
+
+export default HamburgerTest;
