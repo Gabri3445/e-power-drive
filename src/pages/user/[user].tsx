@@ -21,7 +21,6 @@ const UserProfile: NextPage<UserProp> = (props: UserProp) => {
         }
         setShow(false)
     }
-    const router = useRouter()
     return (  
         <>
             <Navbar onHamburgerClick={onHamburgerChange} onAccountClick={() => {console.log("clicked")}} hamburgerShown={show} setHamburgerShown={setShow}></Navbar>
@@ -31,17 +30,19 @@ const UserProfile: NextPage<UserProp> = (props: UserProp) => {
     )
 }
 
-export const getServerSideProps: GetServerSideProps<UserProp> = async (context: any) => {
-    const sessionId = context.query.sessionId
-    const user = await prisma.user.findFirst({
-        where: {
-            sessionId: sessionId
+export const getServerSideProps: GetServerSideProps<UserProp> = async (context: GetServerSidePropsContext) => {
+    const sessionId = context.query.user
+    if (sessionId && typeof sessionId === "string") {
+        const user = await prisma.user.findFirst({
+            where: {
+                sessionId: sessionId
+            }
+        })
+        if (user) {
+            return {props: {username: user.username}}
         }
-    })
-    if (user) {
-        return {props: {username: user.username}}
     }
-    return {props: {username: "giglo"}}
+    return {props: {username: "Error"}}
 }
 
 export default UserProfile
