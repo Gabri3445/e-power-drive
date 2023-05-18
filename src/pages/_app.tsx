@@ -8,7 +8,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
     <CookiesProvider>
       <Component {...pageProps} />
     </CookiesProvider>
-  )
+  );
 };
 
 export default MyApp;

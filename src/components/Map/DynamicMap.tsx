@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
-import 'leaflet/dist/leaflet.css';
-import { MapContainer, TileLayer, Marker, useMap, Popup } from 'react-leaflet';
+import { useEffect, useState } from "react";
+import "leaflet/dist/leaflet.css";
+import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
 
 interface ChangeViewProps {
-    coords: [number, number];
+  coords: [number, number];
 }
 
 export function ChangeView({ coords }: ChangeViewProps) {
@@ -19,20 +19,20 @@ export function ChangeView({ coords }: ChangeViewProps) {
 */
 
 export default function Map() {
-  const [geoData, setGeoData] = useState({lat: 41.11148, lon: 16.8554});
+  const [geoData, setGeoData] = useState({ lat: 41.11148, lon: 16.8554 });
 
   useEffect(() => {
-    const controls = document.querySelector("div.leaflet-control-zoom.leaflet-bar.leaflet-control") as HTMLDivElement
-    controls.style.display = "none"
+    const controls = document.querySelector("div.leaflet-control-zoom.leaflet-bar.leaflet-control") as HTMLDivElement;
+    controls.style.display = "none";
     navigator.geolocation.getCurrentPosition((pos) => {
-      setGeoData({lat: pos.coords.latitude, lon: pos.coords.longitude})
-    })
-  }, [])
+      setGeoData({ lat: pos.coords.latitude, lon: pos.coords.longitude });
+    });
+  }, []);
 
   const center: [number, number] = [geoData.lat, geoData.lon];
 
   return (
-    <MapContainer center={center} zoom={12} style={{ height: '100%' }} className='z-0'>
+    <MapContainer center={center} zoom={12} style={{ height: "100%" }} className="z-0">
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"

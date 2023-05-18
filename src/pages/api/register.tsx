@@ -1,9 +1,10 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiRequest, NextApiResponse } from "next";
 import { prisma } from "~/server/db";
 
 interface RegisterResponse {
   sessionId: string;
 }
+
 interface RegisterRequest {
   name: string;
   email: string;
@@ -28,12 +29,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
       });
       const sessionId = newUser.sessionId;
       return res.status(200).json({ sessionId });
-    } 
-    else {
+    } else {
       return res.status(404).end();
     }
   } else {
     return res.status(405).end();
   }
 }
-export type {RegisterResponse}
+export type { RegisterResponse };
