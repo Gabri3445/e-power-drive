@@ -11,7 +11,7 @@ interface NavbarProps {
 }
 
 const Navbar = (props: NavbarProps) => {
-  const [hamburgerImage, setHambugerImage] = useState<string>(burger.src);
+  const [hamburgerImage, setHamburgerImage] = useState<string>(burger.src);
 
   const onHamburgerClick = () => {
     props.onHamburgerClick();
@@ -20,9 +20,9 @@ const Navbar = (props: NavbarProps) => {
 
   useEffect(() => {
       if (props.hamburgerShown) {
-        setHambugerImage(cross.src);
+        setHamburgerImage(cross.src);
       } else {
-        setHambugerImage(burger.src);
+        setHamburgerImage(burger.src);
       }
     },
     [props.hamburgerShown]
