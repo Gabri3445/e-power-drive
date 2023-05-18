@@ -4,7 +4,11 @@ module.exports = {
       "./src/**/*.{js,ts,tsx}"
   ],
   theme: {
-      extend: {},
+    extend: {
+      fontFamily: {
+        concert: ["Concert One"]
+      }
+    },
   },
   plugins: [],
 }

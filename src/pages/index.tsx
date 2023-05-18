@@ -1,11 +1,10 @@
-import { NextPage } from "next";
+import type { NextPage } from "next";
 import { useState } from "react";
-import Hamburger from "~/components/Hamburger";
+import Hamburger from "~/components/Hamburger/Hamburger";
 import Navbar from "~/components/Navbar";
-import Filters from "~/components/Filters/Filters";
-import Map from "~/components/Map";
 
-const HamburgerTest: NextPage = () => {
+
+const Index: NextPage = () => {
   const [show, setShow] = useState(false);
 
   const onHamburgerChange = () => {
@@ -20,12 +19,9 @@ const HamburgerTest: NextPage = () => {
     <div className="h-screen relative">
       <Navbar onHamburgerClick={onHamburgerChange} onAccountClick={() => {console.log("clicked")}} hamburgerShown={show} setHamburgerShown={setShow}></Navbar>
       <Hamburger show={show} onGreyAreaClick={onHamburgerChange}></Hamburger>
-      <Filters/>
     </div>
   )
-  //TODO: Make this the Login.tsx
-
-
+  // TODO: Make this the login.tsx
 }
 
-export default HamburgerTest;
+export default Index;
