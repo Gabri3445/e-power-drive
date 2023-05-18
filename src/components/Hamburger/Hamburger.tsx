@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import HamburgerElement from '~/components/Hamburger/HamburgerElement';
-import { useEffect } from "react";
 import { useRouter } from 'next/router';
 import {useCookies} from "react-cookie"
 
@@ -24,8 +25,10 @@ const HamburgerMenu = (props: HamburgerProps) => {
           <HamburgerElement name="Categories" source="/hamburgerIcons/category.svg" onClick={() => {}} />
           <HamburgerElement name="About us" source="/hamburgerIcons/info.svg" onClick={() => {}} />
           <HamburgerElement name="Themes" source="/hamburgerIcons/theme.svg" onClick={() => {}} />
-          <HamburgerElement name="User" source="/hamburgerIcons/user.svg" onClick={async () => {
-            await router.push("/user/" + cookies.token)
+          <HamburgerElement name="User" source="/hamburgerIcons/user.svg" onClick={() => {
+            if (cookies.token !== "undefined" && typeof cookies.token === "string") {
+              router.push("/user/" + cookies.token).then(() => window.location.reload()).catch(err => console.log(err))
+            }
           }} />
           <HamburgerElement name="Payment methods" source="/hamburgerIcons/wallet.svg" onClick={() => {}} />
           <HamburgerElement name="Settings" source="/hamburgerIcons/setting.svg" onClick={() => {}} />

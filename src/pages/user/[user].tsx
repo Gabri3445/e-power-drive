@@ -1,6 +1,5 @@
-import type { NextPage } from "next"
-import { useRouter } from "next/router"
-import { GetServerSideProps } from "next"
+import type { GetServerSidePropsContext, NextPage } from "next"
+import type { GetServerSideProps } from "next"
 import { prisma } from "~/server/db"
 import User from "~/components/User"
 import UserIcon from "public/userIcon/profile-user.png"

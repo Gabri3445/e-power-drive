@@ -1,5 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-misused-promises */
 import Image from "next/image";
-import { ChangeEvent, MouseEvent, useState } from "react"
+import { useState } from "react"
+import type { ChangeEvent } from "react";
 import postData from "~/helpers/fetcher";
 import type { LoginResponse } from "~/pages/api/login";
 import { useCookies } from 'react-cookie';

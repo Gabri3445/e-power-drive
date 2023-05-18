@@ -1,4 +1,3 @@
-import Hamburger from "./Hamburger/Hamburger"
 import Image from "next/image"
 
 

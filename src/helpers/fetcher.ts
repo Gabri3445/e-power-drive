@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-return */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default async function postData(url = '', data = {}): Promise<any> {
     // Default options are marked with *
     const response = await fetch(url, {
