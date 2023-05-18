@@ -20,7 +20,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
             }
         })
         if (user) {
-            res.status(200).json({ sessionId: user.id });
+            res.status(200).json({ sessionId: user.sessionId });
             return;
         } else {
             res.status(404).end();

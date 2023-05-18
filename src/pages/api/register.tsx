@@ -26,7 +26,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
           password: request.password
         }
       });
-      const sessionId = newUser.id;
+      const sessionId = newUser.sessionId;
       return res.status(200).json({ sessionId });
     } 
     else {
