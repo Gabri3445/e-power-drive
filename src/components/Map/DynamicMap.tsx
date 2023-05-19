@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
 import "leaflet/dist/leaflet.css";
-import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
+import { MapContainer, Marker, Popup, TileLayer, useMap, } from "react-leaflet";
+import L from "leaflet"
+import MarkerVehicle from "../Markers";
+import fs from "fs"
+import { GetServerSideProps } from "next";
+import CarIcon from "public/filtersIcons/car.png"
+
 
 interface ChangeViewProps {
   coords: [number, number];
@@ -8,20 +14,13 @@ interface ChangeViewProps {
 
 export function ChangeView({ coords }: ChangeViewProps) {
   const map = useMap();
-  map.setView(coords, 12);
+  map.setView(coords, 20);
   return null;
 }
 
-/* 
-{geoData.lat && geoData.lng && (
-        <Marker position={[geoData.lat, geoData.lng]} />
-      )} 
-*/
-
 export default function Map() {
   const [geoData, setGeoData] = useState({ lat: 41.11148, lon: 16.8554 });
-
-  useEffect(() => {
+  useEffect(() => {    
     const controls = document.querySelector("div.leaflet-control-zoom.leaflet-bar.leaflet-control") as HTMLDivElement;
     controls.style.display = "none";
     navigator.geolocation.getCurrentPosition((pos) => {
@@ -30,18 +29,15 @@ export default function Map() {
   }, []);
 
   const center: [number, number] = [geoData.lat, geoData.lon];
-
+  
+  
   return (
-    <MapContainer center={center} zoom={12} style={{ height: "100%" }} className="z-0">
+    <MapContainer center={center} style={{ height: "100%" }} className="z-0">
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <Marker position={[geoData.lat, geoData.lon]}>
-        <Popup>
-          You are here
-        </Popup>
-      </Marker>
+      <MarkerVehicle vehicle_icon={CarIcon.src} vehicle_type="car" lat={geoData.lat} lon={geoData.lon} />
       <ChangeView coords={center} />
     </MapContainer>
   );

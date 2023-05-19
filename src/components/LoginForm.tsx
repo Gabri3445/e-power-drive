@@ -3,10 +3,11 @@
 import Image from "next/image";
 import type { ChangeEvent } from "react";
 import { useState } from "react";
-import postData from "~/helpers/fetcher";
+import postData from "~/utils/fetcher";
 import type { LoginResponse } from "~/pages/api/login";
 import { useCookies } from "react-cookie";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 
 const LoginForm = () => {
@@ -34,7 +35,7 @@ const LoginForm = () => {
         <Image src="/logo.svg" width={150} height={150} alt="barilla" />
         <h1 className="text-[#61B038] text-[40px] ml-[14px] font-semibold">Login</h1>
       </div>
-      <div className="form w-[78%] h-[22%] ml-auto mr-auto relative mt-[28%]">
+      <div className="form w-[78%] h-fit ml-auto mr-auto relative mt-[28%]">
         <input type="text" onChange={(e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)} name="email"
                id="email"
                className="bg-[#77BD52]/[0.6] w-[100%] h-[66px] rounded-[15px] mb-[14.05%] placeholder:text-[#fff]/[0.6] placeholder:text-[24px] text-[24px] text-white"
@@ -44,7 +45,7 @@ const LoginForm = () => {
                className="bg-[#77BD52]/[0.6] w-[100%] h-[66px] rounded-[15px] placeholder:text-[#fff]/[0.6] placeholder:text-[24px] text-[24px] text-white"
                placeholder="Password" />
         <div className="w-full text-right">
-          <a href="#" className="text-[#61B038] text-[16px]">Sign up</a>
+          <Link href="/register" className="text-[#61B038] text-[16px]">Sign up</Link>
         </div>
       </div>
       <div className="w-[78%] h-[60px] mr-auto ml-auto mt-[40px]">

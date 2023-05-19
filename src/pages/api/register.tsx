@@ -14,6 +14,7 @@ interface RegisterRequest {
 export default async function handler(req: NextApiRequest, res: NextApiResponse<RegisterResponse>) {
   if (req.method === "POST") {
     const request = req.body as RegisterRequest;
+    console.log("sfdfdsf")
     const user = await prisma.user.findFirst({
       where: {
         email: request.email
@@ -28,6 +29,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
         }
       });
       const sessionId = newUser.sessionId;
+     
       return res.status(200).json({ sessionId });
     } else {
       return res.status(404).end();

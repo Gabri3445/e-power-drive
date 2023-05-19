@@ -13,19 +13,22 @@ interface UserProp {
 
 const UserProfile: NextPage<UserProp> = (props: UserProp) => {
   const [show, setShow] = useState(false);
+  const [hidden, setHidden] = useState<string>("left-[-100%] transition-all")
   const onHamburgerChange = () => {
     if (!show) {
       setShow(true);
+      setHidden("left-0 transition-all")
       return;
     }
     setShow(false);
+    setHidden("left-[-100%] transition-all")
   };
   return (
     <>
       <Navbar onHamburgerClick={onHamburgerChange} onAccountClick={() => {
         console.log("clicked");
       }} hamburgerShown={show} setHamburgerShown={setShow}></Navbar>
-      <Hamburger show={show} onGreyAreaClick={onHamburgerChange}></Hamburger>
+      <Hamburger show={show} onGreyAreaClick={onHamburgerChange} classname={hidden}></Hamburger>
       <User username={props.username} user_pic={UserIcon.src} rent_vehicles={10} mileage={11} total_spent={100}
             total_time={104} />
     </>

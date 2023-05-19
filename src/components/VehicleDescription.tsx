@@ -18,8 +18,8 @@ interface VehicleDescription {
 const VehicleDescription = (props: VehicleDescription) => {
   return (
     <div onClick={(e: React.MouseEvent<HTMLDivElement>) => {
-      e.currentTarget.style.display = "none";
-    }} className="w-screen h-screen absolute top-0 left-0 bg-black/[0.5]">
+        e.currentTarget.style.display = "none";
+      }} className="hidden vecdesc w-screen h-screen absolute top-0 left-0 bg-black/[0.5]">
       <div
         className="overflow-auto w-[73.91%] h-[72.42%] absolute bg-white rounded-[21px] left-0 right-0 ml-auto mr-auto bottom-[23px]">
         <div className="w-[73.2%] h-full ml-auto mr-auto">
@@ -35,22 +35,22 @@ const VehicleDescription = (props: VehicleDescription) => {
             <p className="text-2xl font-semibold ml-[14px]">{props.type}</p>
           </div>
           <div className="flex items-center mb-4">
-            <Image width={40} height={40} src={Battery} alt="battery-img" />
-            <p className="text-2xl font-semibold ml-[14px]">{props.battery_percentage}</p>
+            <Image width={40} height={40} src={Battery.src} alt="battery-img" />
+            <p className="text-2xl font-semibold ml-[14px]">{props.battery_percentage} %</p>
           </div>
           <div className="flex items-center mb-4">
-            <Image width={40} height={40} src={Speed} alt="km-traveled" />
-            <p className="text-2xl font-semibold ml-[14px]">{props.km_traveled}</p>
+            <Image width={40} height={40} src={Speed.src} alt="km-traveled" />
+            <p className="text-2xl font-semibold ml-[14px]">{props.km_traveled} KM</p>
           </div>
           <div className="flex items-center mb-4">
-            <Image width={40} height={40} src={LicensePlate} alt="km-traveled" />
+            <Image width={40} height={40} src={LicensePlate.src} alt="km-traveled" />
             <p className="text-2xl font-semibold ml-[14px]">{props.license_plate}</p>
           </div>
           <div className="flex items-center mb-4">
-            <Image width={40} height={40} src={Euro} alt="price-km" />
-            <p className="text-2xl font-semibold ml-[14px]">{props.price_km}</p>
+            <Image width={40} height={40} src={Euro.src} alt="price-km" />
+            <p className="text-2xl font-semibold ml-[14px]">€{props.price_km}</p>
           </div>
-          <div className="w-[70.53%] h-[51px] ml-auto mr-auto mt-[75px]">
+          <div className="w-[70.53%] h-[51px] ml-auto mr-auto">
             <button className="bg-[#72BA51] text-[#fff] w-full h-full rounded-[11px] text-[24px]">Book Vehicle</button>
           </div>
         </div>
