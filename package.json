@@ -1,5 +1,5 @@
 {
-  "name": "Auriga",
+  "name": "auriga",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,15 +10,23 @@
     "start": "next start"
   },
   "dependencies": {
-    "@prisma/client": "^4.11.0",
+    "@prisma/client": "^4.14.1",
     "@t3-oss/env-nextjs": "^0.2.1",
+    "leaflet": "^1.9.3",
+    "mapbox-gl": "^2.14.1",
     "next": "^13.4.1",
     "react": "18.2.0",
+    "react-cookie": "^4.1.1",
     "react-dom": "18.2.0",
+    "react-leaflet": "^4.2.1",
+    "react-map-gl": "^7.0.23",
+    "sharp": "^0.32.1",
+    "swr": "^2.1.5",
     "zod": "^3.21.4"
   },
   "devDependencies": {
     "@types/eslint": "^8.21.3",
+    "@types/leaflet": "^1.9.3",
     "@types/node": "^18.15.5",
     "@types/prettier": "^2.7.2",
     "@types/react": "^18.0.28",

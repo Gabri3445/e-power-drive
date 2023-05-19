@@ -1,0 +1,194 @@
+[
+    {
+        "type": "car",
+        "price": 0.4,
+        "drive_license": true,
+        "license_type": "am",
+        "vehicles": [
+            {
+                "license_plate": "xdcfgh",
+                "battery": "90%",
+                "km_traveled": 10,                
+                "booked": false,
+                "lat": 31.123456,
+                "lon": 31.123456
+            },
+            {
+                "license_plate": "dwawdadw",
+                "battery": "50%",
+                "km_traveled": 1,                
+                "booked": false,
+                "lat": 31.123456,
+                "lon": 31.123456
+            },
+            {
+                "license_plate": "xdcfgh",
+                "battery": "90%",
+                "km_traveled": 10,                
+                "booked": true,
+                "lat": 31.123456,
+                "lon": 31.123456
+            },
+            {
+                "license_plate": "xdcfgh",
+                "battery": "90%",
+                "km_traveled": 10,                
+                "booked": false,
+                "lat": 31.123456,
+                "lon": 31.123456
+            },
+            {
+                "license_plate": "xdcfgh",
+                "battery": "90%",
+                "km_traveled": 10,                
+                "booked": false,
+                "lat": 31.123456,
+                "lon": 31.123456
+            }
+        ]
+    },
+    {
+        "type": "motorbike",
+        "price": 0.30,
+        "drive_license": true,
+        "license_type": "am",
+        "vehicles": [
+            {
+                "license_plate": "frf",
+                "battery": "40%",
+                "km_traveled": 20,                
+                "booked": false,
+                "lat": 31.123456,
+                "lon": 31.123456
+            },
+            {
+                "license_plate": "jyht",
+                "battery": "50%",
+                "km_traveled": 100,                
+                "booked": true,
+                "lat": 31.123456,
+                "lon": 31.123456
+            },
+            {
+                "license_plate": "nvgrsr",
+                "battery": "100%",
+                "km_traveled": 10,                
+                "booked": true,
+                "lat": 31.123456,
+                "lon": 31.123456
+            },
+            {
+                "license_plate": "mgmgmm",
+                "battery": "99%",
+                "km_traveled": 1,                
+                "booked": false,
+                "lat": 31.123456,
+                "lon": 31.123456
+            },
+            {
+                "license_plate": "lliuli",
+                "battery": "100%",
+                "km_traveled": 20,                
+                "booked": true,
+                "lat": 31.123456,
+                "lon": 31.123456
+            }
+        ]
+    },
+    {
+        "type": "bike",
+        "price": 0.10,
+        "drive_license": false,
+        "license_type": null,
+        "vehicles": [
+            {
+                "license_plate": "dkwabdjfrf",
+                "battery": "40%",
+                "km_traveled": 5,                
+                "booked": false,
+                "lat": 31.123456,
+                "lon": 31.123456
+            },
+            {
+                "license_plate": "yyyy",
+                "battery": "50%",
+                "km_traveled": 2,                
+                "booked": true,
+                "lat": 31.123456,
+                "lon": 31.123456
+            },
+            {
+                "license_plate": "ttttt",
+                "battery": "100%",
+                "km_traveled": 1,                
+                "booked": true,
+                "lat": 31.123456,
+                "lon": 31.123456
+            },
+            {
+                "license_plate": "aaaaa",
+                "battery": "99%",
+                "km_traveled": 3.5,                
+                "booked": false,
+                "lat": 31.123456,
+                "lon": 31.123456
+            },
+            {
+                "license_plate": "iiji",
+                "battery": "100%",
+                "km_traveled": 2,                
+                "booked": true,
+                "lat": 31.123456,
+                "lon": 31.123456
+            }           
+        ]
+    },
+    {
+        "type": "electric_scooter",
+        "price": 0.10,
+        "drive_license": false,
+        "license_type": null,
+        "vehicles": [
+            {
+                "license_plate": "111",
+                "battery": "40%",
+                "km_traveled": 20,                
+                "booked": false,
+                "lat": 31.123456,
+                "lon": 31.123456
+            },
+            {
+                "license_plate": "222",
+                "battery": "50%",
+                "km_traveled": 100,                
+                "booked": true,
+                "lat": 31.123456,
+                "lon": 31.123456
+            },
+            {
+                "license_plate": "333",
+                "battery": "100%",
+                "km_traveled": 10,                
+                "booked": true,
+                "lat": 31.123456,
+                "lon": 31.123456
+            },
+            {
+                "license_plate": "4444",
+                "battery": "99%",
+                "km_traveled": 1,                
+                "booked": false,
+                "lat": 31.123456,
+                "lon": 31.123456
+            },
+            {
+                "license_plate": "555",
+                "battery": "100%",
+                "km_traveled": 20,                
+                "booked": true,
+                "lat": 31.123456,
+                "lon": 31.123456
+            }
+        ]
+    }
+]
